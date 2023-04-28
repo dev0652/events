@@ -4,7 +4,7 @@ import { Event } from 'components/Event/Event';
 
 export const EventBoard = ({ events }) => {
   return (
-    <div className="{css.eventBoard}">
+    <div className={css.eventBoard}>
       {events.map(({ name, location, speaker, type, time }) => (
         <Event
           key={name}
