@@ -8,6 +8,7 @@ import {
 import css from './Event.module.css';
 
 import { formatEventStart, formatEventDuration } from 'utils';
+import { iconSize } from 'constants';
 
 export const Event = ({ name, location, speaker, type, start, end }) => {
   const formattedStart = formatEventStart(start);
@@ -17,26 +18,26 @@ export const Event = ({ name, location, speaker, type, start, end }) => {
     <div className={css.event}>
       <h2 className={css.title}>{name}</h2>
       <p className={css.info}>
-        <FaMapMarkerAlt className={css.icon} size={16} />
+        <FaMapMarkerAlt className={css.icon} size={iconSize.small} />
         {location}
       </p>
 
       <p className={css.info}>
-        <FaUserAlt className={css.icon} size={16} />
+        <FaUserAlt className={css.icon} size={iconSize.small} />
         {speaker}
       </p>
 
       <p className={css.info}>
-        <FaCalendarAlt className={css.icon} size={16} />
+        <FaCalendarAlt className={css.icon} size={iconSize.small} />
         {formattedStart}
       </p>
 
       <p className={css.info}>
-        <FaClock className={css.icon} size={16} />
+        <FaClock className={css.icon} size={iconSize.small} />
         {duration}
       </p>
 
-      {/* <span className="chip free|paid|vip">{type}</span> */}
+      <span className={`${css.chip} ${css[type]}`}>{type}</span>
     </div>
   );
 };
