@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 export const Card = styled.div`
   position: relative;
   border: 2px dashed ${props => props.theme.colors.black};
-  padding: 8px;
-  border-radius: 4px;
+  padding: ${props => props.theme.spacing(2)};
+  border-radius: ${props => props.theme.spacing(1)};
 `;
 
 export const EventName = styled.h2`
@@ -20,7 +20,7 @@ export const Info = styled.p`
   display: flex;
   align-items: center;
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: ${props => props.theme.spacing(2)};
   color: ${props => props.theme.colors.primaryText};
   font-size: 16px;
   line-height: 24px;
@@ -29,17 +29,17 @@ export const Info = styled.p`
 
   svg {
     display: block;
-    margin-right: 8px;
+    margin-right: ${props => props.theme.spacing(2)};
     color: ${props => props.theme.colors.secondaryText};
   }
 `;
 
 export const Chip = styled.span`
   position: absolute;
-  top: 4px;
-  right: 4px;
-  padding: 4px 8px;
-  border-radius: 4px;
+  top: ${props => props.theme.spacing(1)};
+  right: ${props => props.theme.spacing(1)};
+  padding: ${props => props.theme.spacing(1)} ${props => props.theme.spacing(2)};
+  border-radius: ${props => props.theme.spacing(1)};
   text-transform: uppercase;
   background-color: ${props => props.theme.colors.white};
   color: ${props => props.theme.colors.black};
