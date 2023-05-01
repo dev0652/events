@@ -5,40 +5,65 @@ import {
   FaCalendarAlt,
   FaClock,
 } from 'react-icons/fa';
-import css from './Event.module.css';
-
 import { formatEventStart, formatEventDuration } from 'utils';
 import { iconSize } from 'constants';
+// import css from './Event.module.css';
+import { Card, EventName, Info, Chip } from './Event.styled';
 
 export const Event = ({ name, location, speaker, type, start, end }) => {
   const formattedStart = formatEventStart(start);
   const duration = formatEventDuration(start, end);
 
   return (
-    <div className={css.event}>
-      <h2 className={css.title}>{name}</h2>
-      <p className={css.info}>
-        <FaMapMarkerAlt className={css.icon} size={iconSize.small} />
+    <Card>
+      <EventName>{name}</EventName>
+      <Info>
+        <FaMapMarkerAlt size={iconSize.small} />
         {location}
-      </p>
+      </Info>
 
-      <p className={css.info}>
-        <FaUserAlt className={css.icon} size={iconSize.small} />
+      <Info>
+        <FaUserAlt size={iconSize.small} />
         {speaker}
-      </p>
+      </Info>
 
-      <p className={css.info}>
-        <FaCalendarAlt className={css.icon} size={iconSize.small} />
+      <Info>
+        <FaCalendarAlt size={iconSize.small} />
         {formattedStart}
-      </p>
+      </Info>
 
-      <p className={css.info}>
-        <FaClock className={css.icon} size={iconSize.small} />
+      <Info>
+        <FaClock size={iconSize.small} />
         {duration}
-      </p>
+      </Info>
 
-      <span className={`${css.chip} ${css[type]}`}>{type}</span>
-    </div>
+      <Chip eventType={type}>{type}</Chip>
+    </Card>
+
+    // <div className={css.event}>
+    //   <h2 className={css.title}>{name}</h2>
+    //   <Info>
+    //     <FaMapMarkerAlt size={iconSize.small} />
+    //     {location}
+    //   </p>
+
+    //   <Info>
+    //     <FaUserAlt size={iconSize.small} />
+    //     {speaker}
+    //   </p>
+
+    //   <Info>
+    //     <FaCalendarAlt size={iconSize.small} />
+    //     {formattedStart}
+    //   </p>
+
+    //   <Info>
+    //     <FaClock size={iconSize.small} />
+    //     {duration}
+    //   </p>
+
+    //   <span className={`${css.chip} ${css[type]}`}>{type}</span>
+    // </div>
   );
 };
 
