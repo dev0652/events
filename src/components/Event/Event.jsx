@@ -10,6 +10,8 @@ import { iconSize } from 'constants';
 // import css from './Event.module.css';
 import { Card, EventName, Info, Chip } from './Event.styled';
 
+// #############################
+
 export const Event = ({ name, location, speaker, type, start, end }) => {
   const formattedStart = formatEventStart(start);
   const duration = formatEventDuration(start, end);

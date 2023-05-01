@@ -47,16 +47,16 @@ export const Chip = styled.span`
   background-color: ${setBgColor};
 `;
 
-function setBgColor(props) {
-  switch (props.eventType) {
+function setBgColor({ eventType, theme }) {
+  switch (eventType) {
     case 'free':
-      return 'var(--color-green)';
+      return theme.green;
 
     case 'paid':
-      return 'var(--color-blue)';
+      return theme.blue;
 
     case 'vip':
-      return 'var(--color-red)';
+      return theme.red;
 
     default:
       return 'black';
